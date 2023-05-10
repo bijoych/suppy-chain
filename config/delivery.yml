@@ -1,0 +1,13 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: simple-app
+spec:
+  template:
+    spec:
+      containers:
+      - image: harbor.tap.lab/library/simple-app-default@sha256:5ff121bc640461618190bcde766d17a2bc6fa54f3ee89bc0cd950683f9dbaca4
+        name: workload
+        ports:
+        - containerPort: 8080
+
